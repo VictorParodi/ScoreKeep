@@ -1,4 +1,11 @@
-import { math } from './../imports/utils';
-let out = math(5, 7);
-console.log(out);
-console.log('Hi there from de server folder');
+import { Meteor } from 'meteor/meteor';
+import { Players } from './../imports/api/players';
+
+Meteor.startup(function() {
+    if ( !(Players.find().count()) ) {
+        Players.insert({
+            name: 'Katy',
+            score: 14
+        });
+    }
+});
