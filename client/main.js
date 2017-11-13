@@ -6,7 +6,12 @@ import { tracker } from 'meteor/tracker';
 
 const renderPlayers = function(playersList) {
   return playersList.map(function(player) {
-    return <p key={player._id}> {`${player.name} has ${player.score} point(s)`} </p>;
+    return (
+      <p key={player._id}>
+        {`${player.name} has ${player.score} point(s)`}
+        <button onClick={removePlayers.bind(null, player._id)}> X </button>
+      </p>
+    );
   });
 }
 
@@ -23,6 +28,10 @@ const handleSubmit = (event) => {
 
     event.target.playerName.value = '';
   }
+}
+
+const removePlayers = (playerId) => {
+  Players.remove(playerId);
 }
 
 Meteor.startup(function() {
