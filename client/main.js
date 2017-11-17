@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Players } from './../imports/api/players';
 import { Tracker } from 'meteor/tracker';
+import TitleBar from './../imports/ui/TitleBar';
+import AddPlayer from './../imports/ui/AddPlayer';
 
 const renderPlayers = function(playersList) {
   return playersList.map(function(player) {
@@ -45,27 +47,20 @@ const removePlayer = (playerId) => {
 }
 
 Meteor.startup(function() {
-  let title = 'Score Keep';
-  let name = 'Johnny';
-
   Tracker.autorun(function() {
     let players = Players.find().fetch();
     
     let jsx = (
       <div>
-        <h1> { title } </h1>
-        <p> Hello { name } </p>
-        <p> Another awesome text. </p>
+        <TitleBar title="ScoreKeep App!" />
+
         <div>
           { 
             renderPlayers(players)
           }
         </div>
 
-          <form onSubmit={handleSubmit}>
-            <input type="text" name="playerName" placeholder="Type your name" />
-            <button> Add Player </button>
-          </form>
+        <AddPlayer />
       </div>
     );
   
