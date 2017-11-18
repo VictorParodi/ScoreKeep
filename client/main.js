@@ -19,20 +19,6 @@ const renderPlayers = function(playersList) {
   });
 }
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  let playerName = event.target.playerName.value;
-
-  if (playerName) {
-    Players.insert({
-      name: playerName,
-      score: 0
-    });
-
-    event.target.playerName.value = '';
-  }
-}
-
 const updatePlayers = (playerId, operator) => {
   Players.update(
     playerId,
