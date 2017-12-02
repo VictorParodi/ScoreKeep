@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 class TitleBar extends Component {
     render() {
         return (
-            <h1> { this.props.title } </h1>
+            <div className="title-bar">
+                <div className="wrapper">
+                    <h1> { this.props.title } </h1>
+                </div>
+            </div>
         );
     }
 }
