@@ -6,15 +6,7 @@ import { Tracker } from 'meteor/tracker';
 
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
-import Player from './../imports/ui/Player';
-
-const renderPlayers = function(playersList) {
-  return playersList.map(function(player) {
-    return (
-      <Player key={player._id} player={player} />
-    );
-  });
-}
+import PlayerList from './../imports/ui/PlayerList';
 
 Meteor.startup(function() {
   Tracker.autorun(function() {
@@ -23,13 +15,7 @@ Meteor.startup(function() {
     let jsx = (
       <div>
         <TitleBar title="ScoreKeep App!" />
-
-        <div>
-          { 
-            renderPlayers(players)
-          }
-        </div>
-
+        <PlayerList players={players} />
         <AddPlayer />
       </div>
     );
