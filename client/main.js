@@ -8,7 +8,7 @@ import App from './../imports/ui/App';
 
 Meteor.startup(function() {
   Tracker.autorun(function() {
-    let players = Players.find().fetch();
+    let players = Players.find({}, {sort: {score: -1}}).fetch();
 
     render(
       <App players={players} />,
