@@ -20,12 +20,12 @@ class Player extends Component {
         const { _id, name, score } = this.props.player;
 
         return(
-            <p key={_id}>
-                {`${name} has ${score} point(s)`}
+            <div key={_id} className="item">
+                <p> {`${name} has ${score} point(s)`} </p>
                 <button onClick={this.updatePlayers.bind(null, _id, 1)}> + 1 </button>
                 <button onClick={this.updatePlayers.bind(null, _id, -1)} > - 1 </button>
                 <button onClick={this.removePlayer.bind(null, _id)}> X </button>
-            </p>
+            </div>
         );
     }
 }

@@ -10,8 +10,10 @@ class App extends Component {
         return(
             <div>
                 <TitleBar title="Score Keep App!" />
-                <PlayerList players={this.props.players} />
-                <AddPlayer />
+                <div className="wrapper">
+                    <PlayerList players={this.props.players} />
+                    <AddPlayer />
+                </div>
             </div>
         );
     }
