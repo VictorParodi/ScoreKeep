@@ -21,7 +21,7 @@ class AddPlayer extends Component {
             <div className="item">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" name="playerName" placeholder="Type your name" />
-                    <button> Add Player </button>
+                    <button className="button"> Add Player </button>
                 </form>
             </div>
         );

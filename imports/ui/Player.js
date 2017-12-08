@@ -22,9 +22,9 @@ class Player extends Component {
         return(
             <div key={_id} className="item">
                 <p> {`${name} has ${score} point(s)`} </p>
-                <button onClick={this.updatePlayers.bind(null, _id, 1)}> + 1 </button>
-                <button onClick={this.updatePlayers.bind(null, _id, -1)} > - 1 </button>
-                <button onClick={this.removePlayer.bind(null, _id)}> X </button>
+                <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, 1)}> +1 </button>
+                <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, -1)} > -1 </button>
+                <button className="button button--round" onClick={this.removePlayer.bind(null, _id)}> X </button>
             </div>
         );
     }
