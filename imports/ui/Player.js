@@ -21,10 +21,18 @@ class Player extends Component {
 
         return(
             <div key={_id} className="item">
-                <p> {`${name} has ${score} point(s)`} </p>
-                <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, 1)}> +1 </button>
-                <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, -1)} > -1 </button>
-                <button className="button button--round" onClick={this.removePlayer.bind(null, _id)}> X </button>
+                <div className="player">
+                    <div>
+                        <h3 className="player__name"> {name} </h3>
+                        <p className="player__stats"> {`has ${score} point(s)`} </p>
+                    </div>
+
+                    <div className="player__actions">
+                        <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, 1)}> +1 </button>
+                        <button className="button button--round" onClick={this.updatePlayers.bind(null, _id, -1)} > -1 </button>
+                        <button className="button button--round" onClick={this.removePlayer.bind(null, _id)}> X </button>   
+                    </div>
+                </div>
             </div>
         );
     }

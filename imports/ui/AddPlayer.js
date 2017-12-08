@@ -19,8 +19,8 @@ class AddPlayer extends Component {
     render() {
         return (
             <div className="item">
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input type="text" name="playerName" placeholder="Type your name" />
+                <form className="form" onSubmit={this.handleSubmit.bind(this)}>
+                    <input className="form__input" type="text" name="playerName" placeholder="Type your name" />
                     <button className="button"> Add Player </button>
                 </form>
             </div>
