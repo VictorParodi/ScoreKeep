@@ -18,14 +18,15 @@ class Player extends Component {
 
     render() {
         const { _id, name, score, rank, position } = this.props.player;
+        let itemClassname = `item--position-${rank}`;
 
         return(
-            <div key={_id} className="item">
+            <div key={_id} className={`item ${itemClassname}`}>
                 <div className="player">
                     <div>
                         <h3 className="player__name"> {name} </h3>
                         <p className="player__stats">
-                            {rank} {position} {`${score} point(s)`}
+                            {position} place - {`${score} point(s)`}
                         </p>
                     </div>
 
