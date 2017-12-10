@@ -17,14 +17,16 @@ class Player extends Component {
     }
 
     render() {
-        const { _id, name, score } = this.props.player;
+        const { _id, name, score, rank, position } = this.props.player;
 
         return(
             <div key={_id} className="item">
                 <div className="player">
                     <div>
                         <h3 className="player__name"> {name} </h3>
-                        <p className="player__stats"> {`has ${score} point(s)`} </p>
+                        <p className="player__stats">
+                            {rank} {position} {`${score} point(s)`}
+                        </p>
                     </div>
 
                     <div className="player__actions">
